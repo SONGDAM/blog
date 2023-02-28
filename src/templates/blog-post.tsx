@@ -1,37 +1,27 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
-const BlogPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
-  location,
-}) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
+const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }, location }) => {
+  const siteTitle = site.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article className='blog-post' itemScope itemType='http://schema.org/Article'>
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <h1 itemProp='headline'>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp='articleBody' />
         <hr />
         <footer>
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav className='blog-post-nav'>
         <ul
           style={{
             display: `flex`,
@@ -43,14 +33,14 @@ const BlogPostTemplate = ({
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={previous.fields.slug} rel='prev'>
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={next.fields.slug} rel='next'>
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -58,26 +48,17 @@ const BlogPostTemplate = ({
         </ul>
       </nav>
     </Layout>
-  )
-}
+  );
+};
 
 export const Head = ({ data: { markdownRemark: post } }) => {
-  return (
-    <Seo
-      title={post.frontmatter.title}
-      description={post.frontmatter.description || post.excerpt}
-    />
-  )
-}
+  return <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />;
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title
@@ -110,4 +91,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
