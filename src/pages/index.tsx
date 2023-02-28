@@ -1,4 +1,5 @@
-import { Link, graphql } from 'gatsby';
+import React from 'react';
+import { Link, graphql, PageProps } from 'gatsby';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -24,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map((post) => {
+        {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug;
 
           return (
