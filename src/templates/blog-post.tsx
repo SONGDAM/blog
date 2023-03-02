@@ -52,7 +52,13 @@ const BlogPostTemplate = ({ data: { previous, next, site, markdownRemark: post }
 };
 
 export const Head = ({ data: { markdownRemark: post } }) => {
-  return <Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />;
+  return (
+    <Seo
+      title={post.frontmatter.title}
+      description={post.frontmatter.description || post.excerpt}
+      children={undefined}
+    />
+  );
 };
 
 export default BlogPostTemplate;

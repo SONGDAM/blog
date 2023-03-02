@@ -1,23 +1,15 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
+    title: 'DamLog',
     author: {
-      name: 'Kyle Mathews',
-      summary: 'who lives and works in San Francisco building useful things.',
+      name: '송담',
+      summary: '"기록을 남기고 기억이 휘발되지 않게 하기 위해서"',
     },
     description: 'A starter blog demonstrating what Gatsby can do.',
     siteUrl: 'https://gatsbystarterblogsource.gatsbyjs.io/',
     social: {
-      twitter: 'kylemathews',
+      github: 'SONGDAM',
+      email: 'herb7761@gmail.com',
     },
   },
   plugins: [
@@ -118,6 +110,18 @@ module.exports = {
         // theme_color: `#663399`,
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        web: [
+          {
+            name: `Pretendard`,
+            file: `https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css`,
+          },
+        ],
       },
     },
   ],
