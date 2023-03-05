@@ -3,9 +3,9 @@ module.exports = {
     title: 'DamLog',
     author: {
       name: '송담',
-      summary: '"기록을 남기고 기억이 휘발되지 않게 하기 위해서"',
+      summary: '',
     },
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: '',
     siteUrl: 'https://gatsbystarterblogsource.gatsbyjs.io/',
     social: {
       github: 'SONGDAM',
