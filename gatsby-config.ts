@@ -6,7 +6,6 @@ module.exports = {
       summary: '',
     },
     description: '',
-    siteUrl: 'https://gatsbystarterblogsource.gatsbyjs.io/',
     social: {
       github: 'SONGDAM',
       email: 'herb7761@gmail.com',

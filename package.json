@@ -1,6 +1,5 @@
 {
   "name": "gatsby-starter-blog",
-  "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
@@ -61,6 +60,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "yarn build && gh-pages -d public -b deploy"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b main"
   }
 }
